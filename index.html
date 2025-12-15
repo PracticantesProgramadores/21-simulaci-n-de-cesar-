@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Adivina el deporte de combate</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="branding">🥊⚔️🥋</div>
+      <div class="scorebox">
+        <span>Ronda <span id="round">0</span>/5</span>
+        <span>Puntaje: <span id="score">0</span></span>
+      </div>
+    </header>
+    <section id="welcome" class="welcome-card">
+      <h1 class="welcome-title">Adivina el deporte de combate</h1>
+      <p class="welcome-sub">Recibirás hasta 3 pistas por ronda. Escribe el nombre correcto del deporte para ganar puntos.</p>
+      <div class="welcome-list">
+        <div>• 5 rondas aleatorias: Boxeo, Esgrima, Judo, Karate y Taekwondo.</div>
+        <div>• Pide pistas con el botón “Mostrar siguiente pista”.</div>
+        <div>• Puntaje: 3, 2 o 1 punto según cuántas pistas uses.</div>
+        <div>• Mensajes y sonido para aciertos y errores.</div>
+      </div>
+      <div class="welcome-actions">
+        <button id="welcomeStartBtn" class="cta">Empezar</button>
+      </div>
+    </section>
+
+    <main class="card hidden">
+      <h1>Adivina el deporte de combate</h1>
+      <div id="hintArea" class="hints"></div>
+      <div class="controls">
+        <input id="answerInput" type="text" placeholder="Escribe el deporte" autocomplete="off"/>
+        <div class="buttons">
+          <button id="startBtn">Iniciar</button>
+          <button id="hintBtn" disabled>Mostrar siguiente pista</button>
+          <button id="submitBtn" disabled>Responder</button>
+          <button id="nextBtn" disabled>Siguiente ronda</button>
+        </div>
+      </div>
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <div id="nudge" class="nudge"></div>
+    </main>
+
+    <div id="finalModal" class="modal hidden">
+      <div class="modal-card">
+        <h2>¡Juego terminado!</h2>
+        <p>Puntaje total: <span id="finalScore">0</span></p>
+        <p id="finalPhrase"></p>
+        <button id="restartBtn">Volver a jugar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
